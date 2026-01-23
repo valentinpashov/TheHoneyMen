@@ -1,9 +1,8 @@
-/* App.css */
 :root {
-  --honey-gold: #FFC107;       /* Топло жълто */
-  --honey-dark: #FFA000;       /* Тъмно жълто за ефекти */
-  --bee-black: #212121;        /* Почти черно */
-  --off-white: #f4f4f4;        /* Светъл фон */
+  --honey-gold: #FFC107;       
+  --honey-dark: #FFA000;       
+  --bee-black: #212121;        
+  --off-white: #f4f4f4;        
 }
 
 body {
@@ -13,7 +12,6 @@ body {
   color: var(--bee-black);
 }
 
-/* --- Навигация --- */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -44,7 +42,6 @@ body {
   color: var(--honey-gold);
 }
 
-/* --- Hero Секция (Голямата снимка/текст) --- */
 .hero-section {
   text-align: center;
   padding: 100px 20px;
@@ -78,7 +75,6 @@ body {
   background-color: #000;
 }
 
-/* --- Футър --- */
 .footer {
   text-align: center;
   padding: 20px;
