@@ -30,6 +30,12 @@ function App() {
         <button className="cta-button">Поръчай сега</button>
       </header>
 
+      {/* Content */}
+      <div style={{ padding: '50px', textAlign: 'center' }}>
+        <h3>Добре дошли в света на пчелите!</h3>
+        <p>Тук скоро ще видите нашия инвентар и статистика на кошерите.</p>
+      </div>
+
     </div>
   );
 }
