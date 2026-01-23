@@ -11,7 +11,7 @@
 
 ### **Backend (Server)**
 * **Language:** Java 21
-* **Framework:** Spring Boot (Spring Web)
+* **Framework:** Spring Boot
 * **Build Tool:** Maven
 * **Port:** `8080`
 
@@ -29,3 +29,25 @@ Follow these steps to run the project locally on your machine.
 ```bash
 git clone [https://github.com/valentinpashov/TheHoneyMen.git](https://github.com/valentinpashov/TheHoneyMen.git)
 cd TheHoneyMen
+```
+
+### 2. Run the Backend (Java)
+* Open the backend folder in IntelliJ IDEA.
+* Let Maven download the dependencies.
+* Run the BackendApplication.java file.
+* The server will start at: http://localhost:8080
+
+### 3. Run the Frontend (React)
+* Open a terminal and navigate to the frontend folder:
+```
+cd frontend
+```
+* Install dependencies:
+```
+npm install
+```
+* Start the React server:
+```
+npm start
+```
+* The app will open at: http://localhost:3000
