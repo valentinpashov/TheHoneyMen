@@ -36,6 +36,10 @@ function App() {
         <p>Тук скоро ще видите нашия инвентар и статистика на кошерите.</p>
       </div>
 
+      {/* Footer  */}
+      <footer className="footer">
+        <small>System Status: {backendMessage}</small>
+      </footer>
     </div>
   );
 }
