@@ -23,7 +23,13 @@ function App() {
         </div>
       </nav>
 
-      
+      {/* Main */}
+      <header className="hero-section">
+        <h2>Най-чистият мед в региона</h2>
+        <p>Директно от кошера до твоята трапеза.</p>
+        <button className="cta-button">Поръчай сега</button>
+      </header>
+
     </div>
   );
 }

@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+/* App.css */
+:root {
+  --honey-gold: #FFC107;       /* Топло жълто */
+  --honey-dark: #FFA000;       /* Тъмно жълто за ефекти */
+  --bee-black: #212121;        /* Почти черно */
+  --off-white: #f4f4f4;        /* Светъл фон */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--off-white);
+  color: var(--bee-black);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* --- Навигация --- */
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 1rem 2rem;
+  background-color: var(--bee-black);
+  color: var(--honey-gold);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
   color: white;
+  margin-left: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-links button:hover {
+  color: var(--honey-gold);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* --- Hero Секция (Голямата снимка/текст) --- */
+.hero-section {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, var(--honey-gold) 0%, var(--honey-dark) 100%);
+  color: var(--bee-black);
+}
+
+.hero-section h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: var(--bee-black);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  background-color: #000;
+}
+
+/* --- Футър --- */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--bee-black);
+  color: gray;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
