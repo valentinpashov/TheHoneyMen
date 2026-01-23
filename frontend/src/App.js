@@ -2,23 +2,28 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
-  const [message, setMessage] = useState("Зареждане...");
+  const [backendMessage, setBackendMessage] = useState("Свързване със сървъра...");
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/hello')   // connect to Java backend
+    fetch('http://localhost:8080/api/hello')  // connect to backend Java
       .then(response => response.text())
-      .then(data => setMessage(data))
-      .catch(error => setMessage("Error with connection to Java!"));
+      .then(data => setBackendMessage(data))
+      .catch(error => setBackendMessage("Сървърът не отговаря (Is Java running?)"));
   }, []);
 
   return (
     <div className="App">
-      <header className="App-header">
+      {/* Navigation */}
+      <nav className="navbar">
+        <h1>🐝 TheHoneyMen</h1>
+        <div className="nav-links">
+          <button>Начало</button>
+          <button>Продукти</button>
+          <button>За нас</button>
+        </div>
+      </nav>
 
-        <h1>React + Java връзка</h1>
-        <p style={{ fontSize: '24px', color: 'yellow' }}> {message} </p>
       
-      </header>
     </div>
   );
 }
