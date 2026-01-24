@@ -1,45 +1,14 @@
-import React, { useEffect, useState } from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import ProductList from './components/ProductList';
 
 function App() {
-  const [backendMessage, setBackendMessage] = useState("Свързване със сървъра...");
-
-  useEffect(() => {
-    fetch('http://localhost:8080/api/hello')  // connect to backend Java
-      .then(response => response.text())
-      .then(data => setBackendMessage(data))
-      .catch(error => setBackendMessage("Сървърът не отговаря (Is Java running?)"));
-  }, []);
-
   return (
     <div className="App">
-      {/* Navigation */}
-      <nav className="navbar">
-        <h1>🐝 TheHoneyMen</h1>
-        <div className="nav-links">
-          <button>Начало</button>
-          <button>Продукти</button>
-          <button>За нас</button>
-        </div>
-      </nav>
-
-      {/* Main */}
-      <header className="hero-section">
-        <h2>Най-чистият мед в региона</h2>
-        <p>Директно от кошера до твоята трапеза.</p>
-        <button className="cta-button">Поръчай сега</button>
-      </header>
-
-      {/* Content */}
-      <div style={{ padding: '50px', textAlign: 'center' }}>
-        <h3>Добре дошли в света на пчелите!</h3>
-        <p>Тук скоро ще видите нашия инвентар и статистика на кошерите.</p>
-      </div>
-
-      {/* Footer  */}
-      <footer className="footer">
-        <small>System Status: {backendMessage}</small>
-      </footer>
+      <Navbar />
+      <Hero />
+      <ProductList />
     </div>
   );
 }
