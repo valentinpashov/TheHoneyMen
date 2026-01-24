@@ -27,7 +27,7 @@ public class DataInitializer implements CommandLineRunner {
                     "Акация",
                     20.00,
                     950,
-                    "https://i.imgur.com/Q7bN0Xp.jpg" 
+                    "/images/idea_4.jpg"
             );
 
             // Product 2
@@ -36,7 +36,7 @@ public class DataInitializer implements CommandLineRunner {
                     "Манов",
                     25.00,
                     950,
-                    "https://i.imgur.com/w3F6fXq.jpg"
+                    "/images/idea_4.jpg"
             );
 
             // Product 3
@@ -45,7 +45,7 @@ public class DataInitializer implements CommandLineRunner {
                     "Билков",
                     15.00,
                     950,
-                    "https://i.imgur.com/K8tWb5m.jpg"
+                    "/images/idea_4.jpg"
             );
 
             // Write all products
