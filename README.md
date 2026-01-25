@@ -10,25 +10,45 @@
 ## 🚀 Tech Stack
 
 ### **Backend (Server)**
-* **Language:** Java 21
-* **Framework:** Spring Boot
-* **Build Tool:** Maven
-* **Port:** `8080`
+* **Java**
+* **Spring Boot 3**
+* **PostgreSQL** 
+* **Hibernate** 
+* **Maven** 
 
 ### **Frontend (Client)**
-* **Library:** React.js
-* **Runtime:** Node.js
-* **Styling:** CSS / HTML5
-* **Port:** `3000`
+* **React.js** 
+* **CSS3** 
+* **Fetch API** 
+
+## 📂 Project Structure
+
+```text
+TheHoneyMen/
+├── backend/            
+│   ├── src/main/java/com/example/backend/
+│   │   ├── controllers/    
+│   │   ├── models/        
+│   │   ├── repositories/  
+│   │   └── DataInitializer.java 
+│   └── src/main/resources/application.properties
+│
+└── frontend/           
+    ├── public/images/  
+    └── src/
+        ├── components/ 
+        ├── App.js      
+        └── App.css     
+```
 
 ## 🛠️ Getting Started
 
 Follow these steps to run the project locally on your machine.
 
-### 1. Clone the Repository
-```bash
-git clone [https://github.com/valentinpashov/TheHoneyMen.git](https://github.com/valentinpashov/TheHoneyMen.git)
-cd TheHoneyMen
+### 1. Database Setup
+Create a new PostgreSQL database:
+```
+CREATE DATABASE honeymen_db;
 ```
 
 ### 2. Run the Backend (Java)
