@@ -27,7 +27,15 @@ function Footer() {
           </ul>
         </div>
 
-        
+        {/* Social media links */}
+        <div className="footer-section links">
+          <h3>Последвай ни</h3>
+          <div className="social-links">
+            <a href="#fb" className="social-btn">Facebook</a>      {/*social media links*/}  
+            <a href="#insta" className="social-btn">Instagram</a>  {/*social media links*/}
+          </div>
+        </div>
+
       </div>
 
       <div className="footer-bottom">
