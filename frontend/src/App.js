@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -6,18 +6,21 @@ import ProductList from './components/ProductList';
 import Footer from './components/Footer';
 
 function App() {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCart = localStorage.getItem('myHoneyCart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
   
   const [notification, setNotification] = useState(null);
-
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  // Add function
+  useEffect(() => {
+    localStorage.setItem('myHoneyCart', JSON.stringify(cartItems));
+  }, [cartItems]);
+
   const handleAddToCart = (product) => {
-    //Add product to cart
     setCartItems(prevItems => [...prevItems, product]);
     
-    // Show notification
     setNotification(`Добавихте "${product.name}" в количката! 🍯`);
     
     setTimeout(() => {
@@ -31,7 +34,6 @@ function App() {
 
   return (
     <div className="App">
-      
       <Navbar cartCount={cartItems.length} onCartClick={toggleCart} />
       
       {/* add message - TOAST*/}
@@ -50,15 +52,21 @@ function App() {
           ) : (
             <ul>
               {cartItems.map((item, index) => (
-                <li key={index} style={{marginBottom: '10px', listStyle: 'none'}}>
-                  <b>{item.name}</b> - {item.price.toFixed(2)} лв.
+                <li key={index} style={{marginBottom: '10px', listStyle: 'none', borderBottom: '1px solid #eee', paddingBottom: '5px'}}>
+                  <b>{item.name}</b>
+                  <br/>
+                  <small>{item.price.toFixed(2)} лв.</small>
                 </li>
               ))}
             </ul>
           )}
-          <hr />
-          <p><strong>Общо: {cartItems.reduce((total, item) => total + item.price, 0).toFixed(2)} лв.</strong></p>
-          <button className="cta-button" style={{width: '100%', marginTop: '10px'}}>Плащане</button>
+          
+          {cartItems.length > 0 && (
+             <div style={{marginTop: '15px'}}>
+                <p><strong>Общо: {cartItems.reduce((total, item) => total + item.price, 0).toFixed(2)} лв.</strong></p>
+                <button className="cta-button" style={{width: '100%', marginTop: '10px'}}>Плащане</button>
+             </div>
+          )}
         </div>
       )}
 
