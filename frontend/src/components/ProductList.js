@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './ProductList.css';
 
-function ProductList() {
+
+function ProductList({ addToCart }) {
   const [honeyList, setHoneyList] = useState([]);
 
-  
   useEffect(() => {
     fetch('http://localhost:8080/api/honey')  // connect with Java backend
       .then(response => response.json())
@@ -23,7 +23,9 @@ function ProductList() {
             <p className="product-type">{honey.type}</p>
             <p className="product-price">{honey.price.toFixed(2)} лв.</p>
             <p className="product-grams">{honey.grams} г</p>
-            <button className="add-btn">Добави</button>
+            
+            <button className="add-btn" onClick={() => addToCart(honey)} >Добави</button>
+            
           </div>
         ))}
       </div>
