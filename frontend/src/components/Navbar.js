@@ -2,7 +2,7 @@ import React from 'react';
 import './Navbar.css';
 import ShoppingCart from './ShoppingCart';
 
-function Navbar({ cartCount, onCartClick }) {
+function Navbar({ cartItems, onRemove }) {
   return (
     <nav className="navbar">
       <div className="navbar-logo">TheHoneyMen 🐝</div>
@@ -11,9 +11,9 @@ function Navbar({ cartCount, onCartClick }) {
         <li><a href="#products">Продукти</a></li>
         <li><a href="#about">За нас</a></li>
       </ul>
-      <div onClick={onCartClick}>
-        <ShoppingCart count={cartCount} />
-      </div>
+
+      <ShoppingCart cartItems={cartItems} onRemove={onRemove} />
+      
     </nav>
   );
 }
