@@ -33,7 +33,12 @@ function ShoppingCart({ cartItems, onRemove }) {
                       <b>{item.name}</b>
                       <div className="item-price">{item.price.toFixed(2)} лв.</div>
                     </div>
-                    
+                    <button 
+                      className="remove-btn" 
+                      onClick={() => onRemove(index)}
+                    >
+                      ✕
+                    </button>
                   </li>
                 ))}
               </ul>
