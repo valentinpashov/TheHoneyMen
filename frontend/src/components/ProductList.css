@@ -22,8 +22,10 @@
   border-radius: 15px;
   padding: 20px;
   width: 250px;
+  max-width: 100%; 
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s;
+  flex-shrink: 0; 
 }
 
 .product-card:hover {
@@ -71,4 +73,15 @@
 .add-btn:hover {
   background-color: #FFC107;
   color: black;
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        gap: 20px;
+    }
+    
+    .product-card {
+        width: 100%; 
+        margin: 0 20px; 
+    }
 }
