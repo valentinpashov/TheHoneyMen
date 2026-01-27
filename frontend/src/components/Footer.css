@@ -55,10 +55,24 @@
     background-color: white;
 }
 
-
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid #555; 
     color: #777;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .contact ul li {
+        text-align: center;
+    }
 }
