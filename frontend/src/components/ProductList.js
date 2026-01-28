@@ -47,7 +47,15 @@ function ProductList({ addToCart }) {
 
                 
                 <div className="bottom-row">
+                  <div className="price-box">
+                    <span className="price-value">{honey.price.toFixed(2)} <small>лв.</small></span>
+                    <span className="weight-value">{honey.grams} г</span>
+                  </div>
 
+                  <button className="add-btn-premium" onClick={() => addToCart(honey)}>
+                    <span>+ Добави</span>
+                    <div className="liquid-bg"></div>
+                  </button>
                 </div>
               </div>
             </div>
