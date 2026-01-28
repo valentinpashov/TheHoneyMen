@@ -18,6 +18,22 @@ function ProductList({ addToCart }) {
     }, 300);
   }, []);
 
+  // Stars function
+  const renderStars = (rating, reviews) => {
+    const percentage = (rating / 5) * 100;
+
+    return (
+      <div className="stars-wrapper">
+        <div className="stars-outer">
+          <div className="stars-inner" style={{ width: `${percentage}%` }}></div>
+        </div>
+        <div className="rating-text">
+            <span className="rating-score">{rating}</span>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <section className="products-section" id="products">
       <div className="bg-pattern"></div>
@@ -34,8 +50,8 @@ function ProductList({ addToCart }) {
           {honeyList.map((honey, index) => (
             <div key={honey.id} className="product-card-premium" style={{animationDelay: `${index * 0.1}s`}}>
               
-              {index === 0 && <span className="badge-premium hot">🔥 Топ избор</span>}
-              {index === 2 && <span className="badge-premium hot">🔥 Най - продаван </span>}
+              {index === 0 && <span className="badge-premium hot"> Топ избор </span>}
+              {index === 2 && <span className="badge-premium hot"> Най - продаван </span>}
               
               <div className="image-box">
                 <img src={honey.imageUrl} alt={honey.name} className="product-image-premium" />
@@ -44,6 +60,7 @@ function ProductList({ addToCart }) {
               <div className="card-content">
                 <p className="honey-type-tag">{honey.type}</p>
                 <h3>{honey.name}</h3>
+                {renderStars(honey.rating)}
                 
                 <div className="bottom-row">
                   <div className="price-box">
