@@ -23,28 +23,28 @@ public class DataInitializer implements CommandLineRunner {
 
             // Product 1
             HoneyProduct acacia = new HoneyProduct(
-                    "Златна Акация",
                     "Акация",
-                    20.00,
-                    950,
+                    "Акация",
+                    15.00,
+                    1000,
                     "/images/idea_4.jpg"
             );
 
             // Product 2
             HoneyProduct manov = new HoneyProduct(
-                    "Тъмен Манов Еликсир",
                     "Манов",
-                    25.00,
-                    950,
+                    "Манов",
+                    15.00,
+                    1000,
                     "/images/idea_4.jpg"
             );
 
             // Product 3
             HoneyProduct herbal = new HoneyProduct(
-                    "Планински Букет",
-                    "Билков",
+                    "Букет",
+                    "Букет",
                     15.00,
-                    950,
+                    1000,
                     "/images/idea_4.jpg"
             );
 
