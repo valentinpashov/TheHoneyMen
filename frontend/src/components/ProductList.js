@@ -18,7 +18,6 @@ function ProductList({ addToCart }) {
     }, 300);
   }, []);
 
-
   return (
     <section className="products-section" id="products">
       <div className="bg-pattern"></div>
@@ -35,7 +34,8 @@ function ProductList({ addToCart }) {
           {honeyList.map((honey, index) => (
             <div key={honey.id} className="product-card-premium" style={{animationDelay: `${index * 0.1}s`}}>
               
-
+              {index === 0 && <span className="badge-premium hot">🔥 Топ избор</span>}
+              {index === 2 && <span className="badge-premium hot">🔥 Най - продаван </span>}
               
               <div className="image-box">
                 <img src={honey.imageUrl} alt={honey.name} className="product-image-premium" />
@@ -44,7 +44,6 @@ function ProductList({ addToCart }) {
               <div className="card-content">
                 <p className="honey-type-tag">{honey.type}</p>
                 <h3>{honey.name}</h3>
-
                 
                 <div className="bottom-row">
                   <div className="price-box">
