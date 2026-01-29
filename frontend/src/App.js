@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProductList from './components/ProductList';
 import Footer from './components/Footer';
+import About from './components/About';
 
 function App() {
   const [cartItems, setCartItems] = useState(() => {
@@ -41,6 +42,7 @@ function App() {
       )}
 
       <Hero />
+      <About />
       <ProductList addToCart={handleAddToCart} />
       <Footer />
     </div>
