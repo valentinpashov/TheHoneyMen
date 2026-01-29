@@ -13,7 +13,9 @@ function About() {
           <div className="gold-divider"></div>
         </div>
 
-
+        <div className="about-footer">
+            <p>От нашето семейство за вашето здраве.</p> 
+        </div>
 
       </div>
     </section>
