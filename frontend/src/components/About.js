@@ -40,7 +40,23 @@ function About() {
             </div>
           </div>
 
+          {/* Gallery */}
+          <div className="production-gallery">
+            {/* Photo 1: Beekeeper / Bee */}
+            <div className="gallery-item item-1">
+              <img src="/images/Beekeeper.jfif" alt="Пчелинът" /> 
+            </div>
 
+            {/* Photo 2: Process / Hands */}
+            <div className="gallery-item item-2">
+              <img src="/images/PrintingHoney.jfif" alt="Процес" />
+            </div>
+
+            {/* Photo 3:  Process / Hands */}
+            <div className="gallery-item item-3">
+              <img src="/images/CentrifugeHoney.jfif" alt="Процес" />
+            </div>
+          </div>
           
         </div>
 
