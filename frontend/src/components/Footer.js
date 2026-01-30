@@ -34,7 +34,24 @@ function Footer() {
           </ul>
         </div>
 
-
+        {/* Contact */}
+        <div className="footer-col contact-col">
+          <h3>Свържете се с нас</h3>
+          <ul className="contact-list">
+            <li>
+              <span className="icon">📍</span> 
+              <span>с. Юнаците, обл. Пазарджик<br/>Пчелин "TheHoneyMen"</span>
+            </li>
+            <li>
+              <span className="icon">📞</span> 
+              <span>0899 123 456</span>
+            </li>
+            <li>
+              <span className="icon">✉️</span> 
+              <span>hello@honeymen.bg</span>
+            </li>
+          </ul>
+        </div>
 
       </div>
 
