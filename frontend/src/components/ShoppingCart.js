@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ShoppingCart.css';
 
-function ShoppingCart({ cartItems, onRemove }) {
+function ShoppingCart({ cartItems, onRemove, onCheckout }) {
   
   const [isOpen, setIsOpen] = useState(false);
   const total = cartItems.reduce((acc, item) => acc + item.price, 0);
@@ -51,7 +51,10 @@ function ShoppingCart({ cartItems, onRemove }) {
                 <span>Общо:</span>
                 <span>{total.toFixed(2)} лв.</span>
               </div>
-              <button className="checkout-btn">Плащане</button>
+              <button className="checkout-btn" onClick={() => {
+                  setIsOpen(false); 
+                  onCheckout();     
+              }}>Плащане</button>
             </div>
           )}
         </div>
