@@ -23,6 +23,18 @@ function Footer() {
           </div>
         </div>
 
+        {/* Links */}
+        <div className="footer-col links-col">
+          <h3>Навигация</h3>
+          <ul>
+            <li><a href="#home">Начало</a></li>
+            <li><a href="#products">Нашите продукти</a></li>
+            <li><a href="#about">Историята ни</a></li>
+            <li><a href="#contact">Контакти</a></li>
+          </ul>
+        </div>
+
+
 
       </div>
 
