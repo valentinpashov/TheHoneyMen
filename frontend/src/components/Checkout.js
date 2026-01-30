@@ -24,6 +24,120 @@ function Checkout({ cartItems, total, onBack, onSubmitOrder }) {
     onSubmitOrder(formData);
   };
 
+  const styles = {
+    section: {
+      padding: '120px 20px 60px',
+      backgroundColor: '#f9f9f9',
+      minHeight: '80vh',
+      fontFamily: 'inherit'
+    },
+    container: {
+      maxWidth: '1100px',
+      margin: '0 auto',
+      display: 'flex',
+      flexWrap: 'wrap', 
+      gap: '40px',
+      alignItems: 'flex-start'
+    },
+  
+    formPanel: {
+      flex: '2 1 400px',
+      background: 'white',
+      padding: '30px',
+      borderRadius: '15px',
+      boxShadow: '0 5px 20px rgba(0,0,0,0.05)'
+    },
+    header: {
+      color: '#222',
+      marginBottom: '25px',
+      borderBottom: '2px solid #f0f0f0',
+      paddingBottom: '15px'
+    },
+    
+    summaryPanel: {
+      flex: '1 1 300px',
+      background: 'white',
+      padding: '30px',
+      borderRadius: '15px',
+      boxShadow: '0 5px 20px rgba(0,0,0,0.05)',
+      position: 'sticky',
+      top: '100px'
+    },
+    formGroup: {
+      marginBottom: '20px'
+    },
+    label: {
+      display: 'block',
+      marginBottom: '8px',
+      fontWeight: '600',
+      color: '#555'
+    },
+    input: {
+      width: '100%',
+      padding: '12px',
+      border: '1px solid #ddd',
+      borderRadius: '8px',
+      fontSize: '1rem',
+      boxSizing: 'border-box',
+      fontFamily: 'inherit'
+    },
+    textarea: {
+      width: '100%',
+      padding: '12px',
+      border: '1px solid #ddd',
+      borderRadius: '8px',
+      fontSize: '1rem',
+      boxSizing: 'border-box',
+      fontFamily: 'inherit',
+      resize: 'vertical'
+    },
+    summaryItem: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      marginBottom: '15px',
+      fontSize: '0.95rem',
+      color: '#555'
+    },
+    totalRow: {
+      borderTop: '2px solid #eee',
+      paddingTop: '15px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      fontSize: '1.2rem',
+      fontWeight: '800',
+      color: '#222',
+      marginBottom: '25px'
+    },
+    // Buttons
+    mainButton: {
+      width: '100%',
+      backgroundColor: isHoveredBtn ? '#FFC107' : '#222',
+      color: isHoveredBtn ? '#000' : '#FFC107',
+      border: 'none',
+      padding: '15px',
+      borderRadius: '50px',
+      fontSize: '1.1rem',
+      fontWeight: '800',
+      cursor: 'pointer',
+      transition: 'all 0.3s',
+      textTransform: 'uppercase',
+      marginTop: '10px',
+      transform: isHoveredBtn ? 'translateY(-2px)' : 'none',
+      boxShadow: isHoveredBtn ? '0 5px 15px rgba(255, 193, 7, 0.4)' : 'none'
+    },
+    backBtn: {
+      background: 'none',
+      border: 'none',
+      color: isHoveredBack ? '#222' : '#777',
+      cursor: 'pointer',
+      marginBottom: '20px',
+      fontSize: '0.9rem',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '5px',
+      transition: 'color 0.2s'
+    }
+  };
 
   return (
     <section style={styles.section}>
