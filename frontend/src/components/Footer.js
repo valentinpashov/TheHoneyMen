@@ -2,44 +2,40 @@ import React from 'react';
 import './Footer.css'; 
 
 function Footer() {
-  const currentYear = new Date().getFullYear(); //  Get the current year
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="site-footer" id="about">
-      <div className="footer-content">
+    <footer className="site-footer">
+      <div className="footer-container">
         
-        {/* Brand information */}
-        <div className="footer-section about">
-          <h3>TheHoneyMen 🐝</h3>
-          <p>
-            Ние сме отдадени на това да ви доставим най-чистия и натурален мед, 
-            директно от българските пчелини. Здраве във всяка лъжица.
+        {/* Brand */}
+        <div className="footer-col brand-col">
+          <div className="footer-logo">TheHoneyMen 🐝</div>
+          <p className="brand-desc">
+            Истинският вкус на природата. 
+            Ние произвеждаме лимитирани серии пчелен мед с безкомпромисно качество и 
+            уважение към пчелите.
           </p>
-        </div>
-
-        {/* Contact information */}
-        <div className="footer-section contact">
-          <h3>Контакти</h3>
-          <ul>
-            <li>📍 Пчелин " TheHoneyMen", Пазарджик</li>
-            <li>📞 +359 888 123 456</li>
-            <li>✉️ hello@honeymen.bg</li>
-          </ul>
-        </div>
-
-        {/* Social media links */}
-        <div className="footer-section links">
-          <h3>Последвай ни</h3>
-          <div className="social-links">
-            <a href="#fb" className="social-btn">Facebook</a>      {/*social media links*/}  
-            <a href="#insta" className="social-btn">Instagram</a>  {/*social media links*/}
+          <div className="social-icons">
+            <a href="https://facebook.com" className="social-link">FB</a>
+            <a href="https://instagram.com" className="social-link">IG</a>
+            <a href="https://tiktok.com" className="social-link">TT</a>
           </div>
         </div>
 
+
       </div>
 
+      {/* Footer Bottom */}
       <div className="footer-bottom">
-        <p>&copy; {currentYear} TheHoneyMen. Всички права запазени.</p>
+        <div className="bottom-container">
+          <p>&copy; {currentYear} TheHoneyMen. Всички права запазени.</p>
+          <div className="legal-links">
+            <a href="#privacy">Политика за поверителност</a>
+            <span className="separator">|</span>
+            <a href="#terms">Общи условия</a>
+          </div>
+        </div>
       </div>
     </footer>
   );
