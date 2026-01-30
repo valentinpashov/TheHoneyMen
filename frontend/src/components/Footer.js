@@ -53,6 +53,17 @@ function Footer() {
           </ul>
         </div>
 
+        {/* Inquiry */}
+        <div className="footer-col inquiry-col">
+          <h3>Пишете ни</h3>
+          <p>Имате въпроси или искате оферта на обект? Изпратете ни съобщение.</p>
+          <form className="inquiry-form" onSubmit={(e) => e.preventDefault()}>
+            <input type="email" placeholder="Вашият имейл..." required />
+            <textarea placeholder="Съобщение..." rows="3" required></textarea>
+            <button type="submit">ИЗПРАТИ ЗАПИТВАНЕ</button>
+          </form>
+        </div>
+
       </div>
 
       {/* Footer Bottom */}
