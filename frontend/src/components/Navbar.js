@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import ShoppingCart from './ShoppingCart';
 
-function Navbar({ cartItems, onRemove }) {
+function Navbar({ cartItems, onRemove, onCheckout }) {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);  // Mobile menu state
 
@@ -24,7 +24,7 @@ function Navbar({ cartItems, onRemove }) {
         <li><a href="#about" onClick={() => setIsMobileMenuOpen(false)}>За нас</a></li>
       </ul>
 
-      <ShoppingCart cartItems={cartItems} onRemove={onRemove} />
+      <ShoppingCart cartItems={cartItems} onRemove={onRemove} onCheckout={onCheckout} />
     </nav>
   );
 }
