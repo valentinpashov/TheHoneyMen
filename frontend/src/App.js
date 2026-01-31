@@ -77,7 +77,12 @@ function App() {
          
          setNotification('Поръчката е приета успешно! Ще се свържем с вас. 🎉');
          
-
+         // Return in home page
+         setTimeout(() => {
+            setCartItems([]);       
+            setCurrentView('home'); 
+            window.scrollTo(0, 0);
+         }, 2500);
 
       }, (err) => {
          console.log('FAILED...', err);
