@@ -55,7 +55,15 @@ function App() {
       .map(item => `- ${item.name} (${item.grams}г): ${item.price.toFixed(2)} лв.`)
       .join('\n');
 
-  
+    // Personal data and order details
+    const templateParams = {
+      user_name: `${formData.firstName} ${formData.lastName}`,
+      user_email: formData.email,
+      user_phone: formData.phone,
+      user_address: `${formData.city}, ${formData.address} (Бележки: ${formData.notes})`,
+      order_details: productsListText,
+      total_price: total.toFixed(2)
+    };
 
     setNotification('Изпращане на поръчката... ⏳');
 
@@ -69,7 +77,8 @@ function App() {
          
          setNotification('Поръчката е приета успешно! Ще се свържем с вас. 🎉');
          
-  
+
+
       }, (err) => {
          console.log('FAILED...', err);
          setNotification('Грешка при изпращане. Моля, проверете интернет връзката си.');
