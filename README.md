@@ -1,9 +1,6 @@
 # 🐝 TheHoneyMen
 
 ![Status](https://img.shields.io/badge/Status-Work_in_Progress-yellow?style=for-the-badge&logo=construction)
-![Java](https://img.shields.io/badge/Java-21-orange?style=flat&logo=openjdk)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-green?style=flat&logo=springboot)
-![React](https://img.shields.io/badge/React-18-blue?style=flat&logo=react)
 
 **TheHoneyMen** is a modern Full Stack web application designed for managing honey products. The project connects a robust Java Spring Boot backend with a dynamic React frontend.
 
@@ -37,17 +34,20 @@ TheHoneyMen/
 ├── backend/            
 │   ├── src/main/java/com/example/backend/
 │   │   ├── controllers/    
-│   │   ├── models/        
-│   │   ├── repositories/  
+│   │   ├── models/         
+│   │   ├── repositories/   
 │   │   └── DataInitializer.java 
 │   └── src/main/resources/application.properties
 │
-└── frontend/           
-    ├── public/images/  
-    └── src/
-        ├── components/ 
-        ├── App.js      
-        └── App.css     
+├── frontend/            
+│   ├── public/images/  
+│   ├── src/
+│   │   ├── components/ 
+│   │   ├── App.js      
+│   │   └── App.css     
+│   ├── .env            
+│   └── package.json
+└── README.md    
 ```
 
 ## 🛠️ Getting Started
@@ -55,7 +55,7 @@ TheHoneyMen/
 Follow these steps to run the project locally on your machine.
 
 ### 1. Database Setup
-Create a new PostgreSQL database:
+* Create a new PostgreSQL database:
 ```
 CREATE DATABASE honeymen_db;
 ```
@@ -66,7 +66,18 @@ CREATE DATABASE honeymen_db;
 * Run the BackendApplication.java file.
 * The server will start at: http://localhost:8080
 
-### 3. Run the Frontend (React)
+### 3. Setup Frontend Environment Variables
+⚠️ This project uses EmailJS. You must create a .env file in the frontend root directory to make the checkout work.
+
+ *  Create a file named .env inside frontend/ and add your keys:
+
+```
+REACT_APP_EMAILJS_SERVICE_ID=your_service_id_here
+REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id_here
+REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key_here
+```
+
+### 4. Run the Frontend (React)
 * Open a terminal and navigate to the frontend folder:
 ```
 cd frontend
