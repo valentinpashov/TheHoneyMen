@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'; 
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -15,12 +16,17 @@ function App() {
     return savedCart ? JSON.parse(savedCart) : [];
   });
   
-  const [currentView, setCurrentView] = useState('home'); 
   const [notification, setNotification] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     localStorage.setItem('myHoneyCart', JSON.stringify(cartItems));
   }, [cartItems]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const handleAddToCart = (product) => {
     setCartItems(prev => [...prev, product]);
@@ -34,8 +40,7 @@ function App() {
 
   const handleGoToCheckout = () => {
     if (cartItems.length > 0) {
-      setCurrentView('checkout');
-      window.scrollTo(0, 0); 
+      navigate('/checkout'); 
     } else {
       setNotification('Количката е празна!');
       setTimeout(() => setNotification(null), 3000);
@@ -43,19 +48,16 @@ function App() {
   };
 
   const handleBackToHome = () => {
-    setCurrentView('home');
+    navigate('/'); 
   };
 
   const handleOrderSubmit = (formData) => {
-    // Total price
     const total = cartItems.reduce((acc, item) => acc + item.price, 0);
     
-    // Products list 
     const productsListText = cartItems
       .map(item => `- ${item.name} (${item.grams}г): ${item.price.toFixed(2)} лв.`)
       .join('\n');
 
-    // Personal data and order details
     const templateParams = {
       user_name: `${formData.firstName} ${formData.lastName}`,
       user_email: formData.email,
@@ -74,14 +76,11 @@ function App() {
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
       .then((response) => {
          console.log('SUCCESS!', response.status, response.text);
-         
          setNotification('Поръчката е приета успешно! Ще се свържем с вас. 🎉');
          
-         // Return in home page
          setTimeout(() => {
             setCartItems([]);       
-            setCurrentView('home'); 
-            window.scrollTo(0, 0);
+            navigate('/'); 
          }, 2500);
 
       }, (err) => {
@@ -90,7 +89,6 @@ function App() {
       });
   };
 
-  // Total price
   const totalAmount = cartItems.reduce((acc, item) => acc + item.price, 0);
 
   return (
@@ -103,20 +101,26 @@ function App() {
       
       {notification && ( <div className="toast-notification"> {notification} </div> )}
 
-      {currentView === 'checkout' ? (
-        <Checkout 
-          cartItems={cartItems} 
-          total={totalAmount}
-          onBack={handleBackToHome}
-          onSubmitOrder={handleOrderSubmit}
-        />
-      ) : (
-        <>
-          <Hero />
-          <ProductList addToCart={handleAddToCart} />
-          <About />
-        </>
-      )}
+      <Routes>
+        
+        <Route path="/" element={
+          <>
+            <Hero />
+            <ProductList addToCart={handleAddToCart} />
+            <About />
+          </>
+        } />
+
+        <Route path="/checkout" element={
+          <Checkout 
+            cartItems={cartItems} 
+            total={totalAmount}
+            onBack={handleBackToHome}
+            onSubmitOrder={handleOrderSubmit}
+          />
+        } />
+
+      </Routes>
 
       <Footer />
     </div>
