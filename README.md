@@ -7,6 +7,14 @@
 
 **TheHoneyMen** is a modern Full Stack web application designed for managing honey products. The project connects a robust Java Spring Boot backend with a dynamic React frontend.
 
+## ✨ Key Features
+
+* **Shopping Cart:** Fully functional cart with add/remove capabilities and local storage persistence.
+* **Checkout Process:** Custom multi-step checkout form with validation.
+* **Automated Orders:** Integrated **EmailJS** to send orders directly to the owner's email without requiring server-side payment processing.
+* **Responsive Design:** optimized for mobile and desktop devices.
+* **Security:** Environment variables protection for API keys.
+
 ## 🚀 Tech Stack
 
 ### **Backend (Server)**
@@ -17,9 +25,10 @@
 * **Maven** 
 
 ### **Frontend (Client)**
-* **React.js** 
+* **React.js**
 * **CSS3** 
-* **Fetch API** 
+* **Fetch API**
+* **EmailJS** 
 
 ## 📂 Project Structure
 
