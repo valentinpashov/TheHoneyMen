@@ -8,6 +8,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Checkout from './components/Checkout';
 import emailjs from '@emailjs/browser';
+import NotFound from './components/NotFound';
 
 function App() {
   
@@ -119,6 +120,8 @@ function App() {
             onSubmitOrder={handleOrderSubmit}
           />
         } />
+
+        <Route path="*" element={<NotFound />} />
 
       </Routes>
 
