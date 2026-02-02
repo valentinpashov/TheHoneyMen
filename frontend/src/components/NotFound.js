@@ -7,7 +7,8 @@ function NotFound() {
     <div className="not-found-container">
       <div className="bee-emoji">🐝</div>
       <h1>404</h1>
-
+      <h2>Error</h2>
+      
     </div>
   );
 }
