@@ -23,11 +23,11 @@ public class DataInitializer implements CommandLineRunner {
 
             // Product 1
             HoneyProduct acacia = new HoneyProduct(
-                    "Акация",
-                    "Акация",
+                    "Букет",
+                    "Букет",
                     15.00,
                     1000,
-                    "/images/idea_4.jpg"
+                    "/images/buket.jfif"
             );
 
             // Product 2
@@ -36,16 +36,16 @@ public class DataInitializer implements CommandLineRunner {
                     "Манов",
                     15.00,
                     1000,
-                    "/images/idea_4.jpg"
+                    "/images/manov.jfif"
             );
 
             // Product 3
             HoneyProduct herbal = new HoneyProduct(
                     "Букет",
                     "Букет",
-                    15.00,
-                    1000,
-                    "/images/idea_4.jpg"
+                    10.00,
+                    450,
+                    "/images/middlejar.jfif"
             );
 
             // Write all products
