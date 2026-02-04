@@ -23,7 +23,25 @@ function ProductModal({ product, onClose, onAddToCart }) {
             </div>
         )}
 
-       
+        <h2>{product.name}</h2>
+        <span className="modal-price">{product.price.toFixed(2)} лв.</span>
+
+        <div className="info-section">
+          <h4>Описание</h4>
+          <p>{product.description || "Вкусен натурален мед от нашите кошери."}</p>
+        </div>
+
+        <div className="info-section">
+          <h4>Ползи</h4>
+          <p>{product.benefits || "Подсилва имунната система и дава енергия."}</p>
+        </div>
+
+        <div className="info-section">
+          <h4>Текстура</h4>
+          <p>{product.texture || "Течна и фина кристализация."}</p>
+        </div>
+
+        
       </div>
     </div>
   );
