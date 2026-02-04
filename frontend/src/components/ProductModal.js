@@ -41,7 +41,15 @@ function ProductModal({ product, onClose, onAddToCart }) {
           <p>{product.texture || "Течна и фина кристализация."}</p>
         </div>
 
-        
+        <button 
+          className="modal-add-btn" 
+          onClick={() => {
+            onAddToCart(product);
+            onClose(); // close modal after adding to cart
+          }}
+        >
+          Добави в количката 🛒
+        </button>
       </div>
     </div>
   );
