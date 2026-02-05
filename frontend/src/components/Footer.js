@@ -40,7 +40,7 @@ function Footer() {
           <ul className="contact-list">
             <li>
               <span className="icon">📍</span> 
-              <span>с. Юнаците, обл. Пазарджик<br/>Пчелин "TheHoneyMen"</span>
+              <span>обл. Пазарджик<br/>Пчелин "TheHoneyMen"</span>
             </li>
             <li>
               <span className="icon">📞</span> 
