@@ -186,12 +186,12 @@ function Checkout({ cartItems, total, onBack, onSubmitOrder }) {
             </div>
 
             <div style={styles.formGroup}>
-              <label style={styles.label}>Адрес за доставка (Еконт/Спиди или точен адрес)</label>
+              <label style={styles.label}>Адрес за доставка</label>
               <textarea name="address" rows="2" required onChange={handleChange} placeholder="Офис на Еконт..." style={styles.textarea}></textarea>
             </div>
 
             <div style={styles.formGroup}>
-              <label style={styles.label}>Допълнителни бележки (опционално)</label>
+              <label style={styles.label}>Допълнителни бележки</label>
               <textarea name="notes" rows="2" onChange={handleChange} placeholder="Напр: Да се обади преди доставка..." style={styles.textarea}></textarea>
             </div>
           </form>
