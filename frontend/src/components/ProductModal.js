@@ -36,11 +36,6 @@ function ProductModal({ product, onClose, onAddToCart }) {
           <p>{product.benefits || "Подсилва имунната система и дава енергия."}</p>
         </div>
 
-        <div className="info-section">
-          <h4>Текстура</h4>
-          <p>{product.texture || "Течна и фина кристализация."}</p>
-        </div>
-
         <button 
           className="modal-add-btn" 
           onClick={() => {
