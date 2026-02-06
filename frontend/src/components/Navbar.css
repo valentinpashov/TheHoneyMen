@@ -79,6 +79,15 @@
   width: 100%;
 }
 
+.navbar-cart-container {
+  margin-left: 40px;         
+  padding-left: 30px;        
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  height: 40px;              
+  display: flex;
+  align-items: center;
+}
+
 .hamburger-menu {
   display: none;
   font-size: 1.8rem;
@@ -95,7 +104,15 @@
 
   .hamburger-menu {
     display: block; 
-    order: 3; 
+    order: 3;
+  }
+
+  .navbar-cart-container {
+    margin-left: 10px;
+    padding-left: 0;
+    border-left: none;
+    height: auto;
+    order: 2;
   }
 
   .navbar-links {
