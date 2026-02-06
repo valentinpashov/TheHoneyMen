@@ -1,23 +1,40 @@
 .navbar {
+  background-color: #333;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky; 
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  width: 100%;
+}
+
+.navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  color: white;
-  padding: 15px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   width: 100%;
+  max-width: 1200px;
+  padding: 0 20px; 
   box-sizing: border-box;
 }
 
 .navbar-logo {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 800;
   color: #FFC107;
+  text-decoration: none;
   cursor: pointer;
+  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
 }
 
 .navbar-links {
@@ -26,18 +43,40 @@
   gap: 30px;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
-.navbar-links a {
+.navbar-links li a,
+.navbar-links li span {
   text-decoration: none;
   color: white;
   font-weight: 500;
   transition: color 0.3s;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
 }
 
-.navbar-links a:hover {
+.navbar-links li a:hover,
+.navbar-links li span:hover {
   color: #FFC107;
+}
+
+.navbar-links li a::after,
+.navbar-links li span::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #FFC107;
+  transition: width 0.3s;
+}
+
+.navbar-links li a:hover::after,
+.navbar-links li span:hover::after {
+  width: 100%;
 }
 
 .hamburger-menu {
@@ -45,11 +84,13 @@
   font-size: 1.8rem;
   cursor: pointer;
   color: white;
+  margin-left: 15px;
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    padding: 15px 20px;
+  
+  .navbar-container {
+    padding: 0 15px;
   }
 
   .hamburger-menu {
@@ -59,7 +100,7 @@
 
   .navbar-links {
     position: absolute;
-    top: 70px; 
+    top: 80px;
     left: 0;
     width: 100%;
     background-color: #222;
@@ -69,11 +110,12 @@
     max-height: 0; 
     overflow: hidden;
     transition: max-height 0.4s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   }
 
   .navbar-links.active {
-    max-height: 300px;
-    border-bottom: 2px solid #FFC107;
+    max-height: 400px;
+    border-bottom: 3px solid #FFC107;
   }
 
   .navbar-links li {
@@ -84,6 +126,11 @@
   }
   
   .navbar-links li:hover {
-    background-color: #444;
+    background-color: #333;
+  }
+
+  .navbar-links li a:hover::after,
+  .navbar-links li span:hover::after {
+    width: 0; 
   }
 }
