@@ -58,13 +58,15 @@ function Navbar({ cartItems, onRemove, onCheckout }) {
           {isMobileMenuOpen ? '✕' : '☰'}
         </div>
 
-        <ul className={`navbar-links ${isMobileMenuOpen ? 'active' : ''}`}>
-          <li><Link to="/" onClick={() => handleScrollTo('home')}>{t.home}</Link></li>
-          <li><span onClick={() => handleScrollTo('products')}>{t.products}</span></li>
-          <li><span onClick={() => handleScrollTo('about')}>{t.about}</span></li>
-        </ul>
+       <ul className={`navbar-links ${isMobileMenuOpen ? 'active' : ''}`}>
+        <li><Link to="/" onClick={() => handleScrollTo('home')}>{t.home}</Link></li>
+        <li><span onClick={() => handleScrollTo('products')}>{t.products}</span></li>
+        <li><span onClick={() => handleScrollTo('about')}>{t.about}</span></li>
+      </ul>
 
+      <div className="navbar-cart-container">
         <ShoppingCart cartItems={cartItems} onRemove={onRemove} onCheckout={onCheckout} />
+      </div>
       
       </div>
     </nav>
