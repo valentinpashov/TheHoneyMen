@@ -11,6 +11,11 @@ export const translations = {
     premium_title: "Нашите Златни Еликсири",
     slogan: "От кошера до лъжицата",
     
+    // Hero section
+    hero_title: "Златна топлина за ледени дни",
+    hero_subtitle: "Зареди се с натурален имунитет директно от кошера",
+    hero_cta: "Поръчай сега",
+    
     // Buttons
     add_btn: "Добави",
     details_btn: "Детайли",
@@ -43,6 +48,11 @@ export const translations = {
     our_products: "Our Products",
     premium_title: "Our Golden Elixirs",
     slogan: "From Hive to Spoon",
+
+    // Hero section
+    hero_title: "Golden Warmth for Icy Days",
+    hero_subtitle: "Recharge with natural immunity straight from the hive",
+    hero_cta: "Order Now",
     
     // Buttons
     add_btn: "Add",
