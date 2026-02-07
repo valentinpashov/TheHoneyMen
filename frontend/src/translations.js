@@ -33,12 +33,9 @@ export const translations = {
     texture: "Текстура",
     add_to_cart_modal: "Добави в количката",
     
-    // Checkout
+    // Checkout & Form
     checkout_title: "Данни за заявка",
     send_order: "Изпрати заявка",
-
-    //Checkout form
-    checkout_title: "Данни за заявка",
     back_to_shop: "← Обратно към магазина",
     checkout_desc: "Попълнете данните си. След натискане на бутона, ще бъде генериран имейл с вашата поръчка.",
     
@@ -111,12 +108,9 @@ export const translations = {
     texture: "Texture",
     add_to_cart_modal: "Add to Cart",
     
-    // Checkout
+    // Checkout & Form
     checkout_title: "Order Details",
-    send_order: "Send Order",
-
-    //Checkout form
-    checkout_title: "Order Details",
+    send_order: "Send Order", 
     back_to_shop: "← Back to Shop",
     checkout_desc: "Fill in your details. After clicking the button, an email with your order will be generated.",
     
