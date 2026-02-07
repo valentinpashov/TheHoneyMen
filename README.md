@@ -1,7 +1,4 @@
 # 🐝 TheHoneyMen
-
-![Status](https://img.shields.io/badge/Status-Work_in_Progress-yellow?style=for-the-badge&logo=construction)
-
 **TheHoneyMen** is a modern Full Stack web application designed for managing honey products. The project connects a robust Java Spring Boot backend with a dynamic React frontend.
 
 ## ✨ Key Features
