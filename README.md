@@ -3,7 +3,9 @@
 
 ## ✨ Key Features
 
+* **Internationalization**
 * **Shopping Cart:** Fully functional cart with add/remove capabilities and local storage persistence.
+* **Product Details Modal**
 * **Checkout Process:** Custom multi-step checkout form with validation.
 * **Automated Orders:** Integrated **EmailJS** to send orders directly to the owner's email without requiring server-side payment processing.
 * **Responsive Design:** optimized for mobile and desktop devices.
@@ -39,12 +41,13 @@ TheHoneyMen/
 ├── frontend/            
 │   ├── public/images/  
 │   ├── src/
-│   │   ├── components/ 
+│   │   ├── components/     
+│   │   ├── translations/   
 │   │   ├── App.js      
 │   │   └── App.css     
-│   ├── .env            
+│   ├── .env                
 │   └── package.json
-└── README.md    
+└── README.md
 ```
 
 ## 🛠️ Getting Started
