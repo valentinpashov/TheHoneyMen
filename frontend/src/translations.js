@@ -37,6 +37,30 @@ export const translations = {
     checkout_title: "Данни за заявка",
     send_order: "Изпрати заявка",
 
+    //Checkout form
+    checkout_title: "Данни за заявка",
+    back_to_shop: "← Обратно към магазина",
+    checkout_desc: "Попълнете данните си. След натискане на бутона, ще бъде генериран имейл с вашата поръчка.",
+    
+    lbl_first_name: "Име",
+    lbl_last_name: "Фамилия",
+    lbl_email: "Имейл",
+    lbl_phone: "Телефон за връзка",
+    lbl_city: "Населено място",
+    lbl_address: "Адрес за доставка",
+    lbl_notes: "Допълнителни бележки",
+    
+    ph_first_name: "Иван",
+    ph_last_name: "Петров",
+    ph_city: "гр. София",
+    ph_address: "Офис на Еконт или точен адрес...",
+    ph_notes: "Напр: Да се обади преди доставка...",
+    
+    summary_title: "Вашата заявка",
+    total_label: "Прогнозна сума:",
+    send_order_btn: "Изпрати заявка по Имейл ➤",
+    checkout_footer_note: "*Ще се свържем с вас за потвърждение.",
+
     // Footer
     footer_desc: "Истинският вкус на природата. Ние произвеждаме лимитирани серии пчелен мед с безкомпромисно качество и уважение към пчелите.",
     footer_nav_title: "Навигация",
@@ -90,6 +114,30 @@ export const translations = {
     // Checkout
     checkout_title: "Order Details",
     send_order: "Send Order",
+
+    //Checkout form
+    checkout_title: "Order Details",
+    back_to_shop: "← Back to Shop",
+    checkout_desc: "Fill in your details. After clicking the button, an email with your order will be generated.",
+    
+    lbl_first_name: "First Name",
+    lbl_last_name: "Last Name",
+    lbl_email: "Email",
+    lbl_phone: "Phone Number",
+    lbl_city: "City / Town",
+    lbl_address: "Delivery Address",
+    lbl_notes: "Additional Notes",
+    
+    ph_first_name: "John",
+    ph_last_name: "Doe",
+    ph_city: "Sofia",
+    ph_address: "Courier office or street address...",
+    ph_notes: "E.g., Call before delivery...",
+    
+    summary_title: "Your Order",
+    total_label: "Estimated Total:",
+    send_order_btn: "Send Order via Email ➤",
+    checkout_footer_note: "*We will contact you for confirmation.",
 
     // Footer
     footer_desc: "The true taste of nature. We produce limited batches of honey with uncompromising quality and respect for the bees.",
