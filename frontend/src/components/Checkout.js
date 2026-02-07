@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../LanguageContext'; 
 
 function Checkout({ cartItems, total, onBack, onSubmitOrder }) {
   
   const [isHoveredBtn, setIsHoveredBtn] = useState(false);
   const [isHoveredBack, setIsHoveredBack] = useState(false);
+  const { t } = useLanguage(); 
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -39,7 +41,6 @@ function Checkout({ cartItems, total, onBack, onSubmitOrder }) {
       gap: '40px',
       alignItems: 'flex-start'
     },
-  
     formPanel: {
       flex: '2 1 400px',
       background: 'white',
@@ -53,7 +54,6 @@ function Checkout({ cartItems, total, onBack, onSubmitOrder }) {
       borderBottom: '2px solid #f0f0f0',
       paddingBottom: '15px'
     },
-    
     summaryPanel: {
       flex: '1 1 300px',
       background: 'white',
@@ -108,7 +108,6 @@ function Checkout({ cartItems, total, onBack, onSubmitOrder }) {
       color: '#222',
       marginBottom: '25px'
     },
-    // Buttons
     mainButton: {
       width: '100%',
       backgroundColor: isHoveredBtn ? '#FFC107' : '#222',
@@ -143,7 +142,7 @@ function Checkout({ cartItems, total, onBack, onSubmitOrder }) {
     <section style={styles.section}>
       <div style={styles.container}>
         
-        {/* Left Form - Personal info */}
+        {/* Left Form */}
         <div style={styles.formPanel}>
           <button 
             style={styles.backBtn} 
@@ -151,68 +150,70 @@ function Checkout({ cartItems, total, onBack, onSubmitOrder }) {
             onMouseEnter={() => setIsHoveredBack(true)}
             onMouseLeave={() => setIsHoveredBack(false)}
           >
-            ← Обратно към магазина
+            {t.back_to_shop}
           </button>
           
-          <h2 style={styles.header}>Данни за заявка</h2>
+          <h2 style={styles.header}>{t.checkout_title}</h2>
           <p style={{marginBottom: '20px', color: '#666'}}>
-            Попълнете данните си. След натискане на бутона, ще бъде генериран имейл с вашата поръчка.
+            {t.checkout_desc}
           </p>
           
           <form onSubmit={handleSubmit}>
             <div style={styles.formGroup}>
-              <label style={styles.label}>Име</label>
-              <input type="text" name="firstName" required onChange={handleChange} placeholder="Иван" style={styles.input} />
+              <label style={styles.label}>{t.lbl_first_name}</label>
+              <input type="text" name="firstName" required onChange={handleChange} placeholder={t.ph_first_name} style={styles.input} />
             </div>
 
             <div style={styles.formGroup}>
-              <label style={styles.label}>Фамилия</label>
-              <input type="text" name="lastName" required onChange={handleChange} placeholder="Петров" style={styles.input} />
+              <label style={styles.label}>{t.lbl_last_name}</label>
+              <input type="text" name="lastName" required onChange={handleChange} placeholder={t.ph_last_name} style={styles.input} />
             </div>
 
             <div style={styles.formGroup}>
-              <label style={styles.label}>Имейл</label>
+              <label style={styles.label}>{t.lbl_email}</label>
               <input type="email" name="email" required onChange={handleChange} placeholder="ivan@abv.bg" style={styles.input} />
             </div>
 
             <div style={styles.formGroup}>
-              <label style={styles.label}>Телефон за връзка</label>
+              <label style={styles.label}>{t.lbl_phone}</label>
               <input type="tel" name="phone" required onChange={handleChange} placeholder="0888 123 456" style={styles.input} />
             </div>
 
             <div style={styles.formGroup}>
-              <label style={styles.label}>Населено място</label>
-              <input type="text" name="city" required onChange={handleChange} placeholder="гр. София" style={styles.input} />
+              <label style={styles.label}>{t.lbl_city}</label>
+              <input type="text" name="city" required onChange={handleChange} placeholder={t.ph_city} style={styles.input} />
             </div>
 
             <div style={styles.formGroup}>
-              <label style={styles.label}>Адрес за доставка</label>
-              <textarea name="address" rows="2" required onChange={handleChange} placeholder="Офис на Еконт..." style={styles.textarea}></textarea>
+              <label style={styles.label}>{t.lbl_address}</label>
+              <textarea name="address" rows="2" required onChange={handleChange} placeholder={t.ph_address} style={styles.textarea}></textarea>
             </div>
 
             <div style={styles.formGroup}>
-              <label style={styles.label}>Допълнителни бележки</label>
-              <textarea name="notes" rows="2" onChange={handleChange} placeholder="Напр: Да се обади преди доставка..." style={styles.textarea}></textarea>
+              <label style={styles.label}>{t.lbl_notes}</label>
+              <textarea name="notes" rows="2" onChange={handleChange} placeholder={t.ph_notes} style={styles.textarea}></textarea>
             </div>
           </form>
         </div>
 
-        {/* Right Summary  */}
+        {/* Right Summary */}
         <div style={styles.summaryPanel}>
-          <h3 style={{...styles.header, fontSize: '1.2rem'}}>Вашата заявка</h3>
+          <h3 style={{...styles.header, fontSize: '1.2rem'}}>{t.summary_title}</h3>
           
           <div style={{maxHeight: '300px', overflowY: 'auto', marginBottom: '20px'}}>
             {cartItems.map((item, index) => (
               <div key={index} style={styles.summaryItem}>
                 <span>{item.name} ({item.grams}г)</span>
-                <span style={{fontWeight: 'bold'}}>{item.price.toFixed(2)} лв.</span>
+                <span style={{fontWeight: 'bold'}}>
+                    {item.price.toFixed(2)} {t.currency}
+                </span>
               </div>
             ))}
           </div>
 
           <div style={styles.totalRow}>
-            <span>Прогнозна сума:</span>
-            <span>{total.toFixed(2)} лв.</span>
+            <span>{t.total_label}</span>
+            <span>{total.toFixed(2)} {t.currency}</span>
           </div>
 
           <button 
@@ -221,11 +222,11 @@ function Checkout({ cartItems, total, onBack, onSubmitOrder }) {
             onMouseEnter={() => setIsHoveredBtn(true)} 
             onMouseLeave={() => setIsHoveredBtn(false)}
             >
-            Изпрати заявка по Имейл ➤
+            {t.send_order_btn}
           </button>
           
           <p style={{fontSize: '0.8rem', color: '#999', marginTop: '15px', textAlign: 'center'}}>
-            *Ще се свържем с вас за потвърждение.
+            {t.checkout_footer_note}
           </p>
         </div>
 
