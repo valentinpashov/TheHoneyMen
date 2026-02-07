@@ -70,7 +70,6 @@ export const translations = {
     hero_title: "Golden Warmth for Icy Days",
     hero_subtitle: "Recharge with natural immunity straight from the hive",
     hero_cta: "Order Now",
-    contact: "Контакти",
     
     // Buttons
     add_btn: "Add",
