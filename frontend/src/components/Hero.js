@@ -1,7 +1,10 @@
 import React from 'react';
 import './Hero.css';
+import { useLanguage } from '../LanguageContext';
 
 function Hero() {
+  const { t } = useLanguage(); 
+
   return (
     <section className="hero-section" id="home">
       
@@ -13,10 +16,10 @@ function Hero() {
       <div className="hero-overlay"></div>
       
       <div className="hero-content">
-        <h1>Златна топлина за ледени дни</h1>
-        <h2>Зареди се с натурален имунитет директно от кошера</h2>
+        <h1>{t.hero_title}</h1>
+        <h2>{t.hero_subtitle}</h2>
         <a href="#products">
-            <button className="cta-button">Поръчай сега</button>
+            <button className="cta-button">{t.hero_cta}</button>
         </a>
       </div>
     </section>
